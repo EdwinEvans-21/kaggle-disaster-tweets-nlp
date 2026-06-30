@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "disaster-tweets"
+version = "0.1.0"
+description = "A Kaggle NLP baseline project for disaster tweet classification."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Edwin" }
+]
+dependencies = [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ipykernel",
+    "jupyter",
+    "black",
+    "ruff",
+    "pytest",
+]
+
+transformer = [
+    "torch",
+    "transformers",
+    "datasets",
+    "accelerate",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = []

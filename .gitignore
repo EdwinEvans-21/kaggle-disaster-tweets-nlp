@@ -1,0 +1,33 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+
+# VS Code
+.vscode/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Test and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Ruff / mypy / cache
+.ruff_cache/
+.mypy_cache/
+
+# Data files
+data/
+
+# Output files
+outputs/
+
+# Logs
+*.log
