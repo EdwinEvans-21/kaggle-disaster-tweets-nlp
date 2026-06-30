@@ -51,12 +51,10 @@ def find_best_threshold(model, X, y, n_splits=5, random_state=42):
         preds = (oof_probs >= threshold).astype(int)
         score = f1_score(y, preds)
 
-        results.append(
-            {
-                "threshold": float(threshold),
-                "f1": float(score),
-            }
-        )
+        results.append({
+            "threshold": float(threshold),
+            "f1": float(score),
+        })
 
     results_df = pd.DataFrame(results).sort_values(
         by="f1",

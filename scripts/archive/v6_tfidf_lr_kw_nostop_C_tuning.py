@@ -28,7 +28,7 @@ def main():
     X_train = build_input_text(train_df)
     y_train = train_df["target"]
     X_test = build_input_text(test_df)
-    
+
     for C in [0.5, 1.0, 1.5, 2.0]:
 
         model = build_tfidf_logistic_regression_model(stop_words=None, C=C)
@@ -39,17 +39,17 @@ def main():
             random_state=42,
         )
         scores = cross_val_score(model,
-                                X_train,
-                                y_train,
-                                cv=cv,
-                                scoring="f1",
-                                n_jobs=-1)
+                                 X_train,
+                                 y_train,
+                                 cv=cv,
+                                 scoring="f1",
+                                 n_jobs=-1)
         print()
         print(f"C={C}:")
         print(scores)
         print("mean_f1:", scores.mean())
         print("std_f1:", scores.std())
-    
+
     C = 1.5
     model = build_tfidf_logistic_regression_model(stop_words=None, C=C)
 

@@ -14,14 +14,12 @@ def build_tfidf_logistic_regression_model(
     model = Pipeline(steps=[
         (
             "tf_idf",
-            TfidfVectorizer(
-                lowercase=True,
-                stop_words=stop_words,
-                ngram_range=ngram_range,
-                min_df=min_df,
-                max_df=max_df,
-                sublinear_tf=sublinear_tf
-            ),
+            TfidfVectorizer(lowercase=True,
+                            stop_words=stop_words,
+                            ngram_range=ngram_range,
+                            min_df=min_df,
+                            max_df=max_df,
+                            sublinear_tf=sublinear_tf),
         ),
         (
             "classifier",

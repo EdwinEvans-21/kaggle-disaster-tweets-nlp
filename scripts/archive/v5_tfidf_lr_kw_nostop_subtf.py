@@ -29,7 +29,8 @@ def main():
     y_train = train_df["target"]
     X_test = build_input_text(test_df)
 
-    model = build_tfidf_logistic_regression_model(stop_words=None, sublinear_tf=True)
+    model = build_tfidf_logistic_regression_model(stop_words=None,
+                                                  sublinear_tf=True)
 
     cv = StratifiedKFold(
         n_splits=5,

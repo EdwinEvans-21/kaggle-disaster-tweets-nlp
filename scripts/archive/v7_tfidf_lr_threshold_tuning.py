@@ -81,7 +81,7 @@ def main():
     print("best_threshold:", best_threshold)
     print("best_oof_f1:", best_f1)
     print(threshold_results.head(10))
-    
+
     model = build_tfidf_logistic_regression_model()
 
     model.fit(X_train, y_train)
@@ -89,13 +89,11 @@ def main():
     test_probs = model.predict_proba(X_test)[:, 1]
     test_preds = (test_probs >= best_threshold).astype(int)
 
-    submission = pd.DataFrame(
-        {
-            "id": test_df["id"],
-            "target": test_preds,
-        }
-    )
-    
+    submission = pd.DataFrame({
+        "id": test_df["id"],
+        "target": test_preds,
+    })
+
     threshold_tag = f"thr{int(best_threshold * 100):03d}"
     submission_path = OUTPUT_DIR / f"submission_v7_tfidf_lr_text_{threshold_tag}.csv"
     submission.to_csv(submission_path, index=False)
