@@ -128,7 +128,9 @@ def make_submission(model, X, y, X_test, test_df, experiment_name, threshold):
         "target": test_preds,
     })
 
-    submission_path = SUBMISSION_DIR / f"submission_{experiment_name}_{threshold_tag}.csv"
+    submission_path = (
+        SUBMISSION_DIR / f"submission_{experiment_name}_{threshold_tag}.csv"
+    )
     submission.to_csv(submission_path, index=False)
 
     print(f"Saved submission to: {submission_path}")
