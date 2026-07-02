@@ -3,9 +3,9 @@ from pathlib import Path
 
 import pandas as pd
 
-from src.evaluate import evaluate_cv, find_best_threshold
-from src.features import build_input_text
-from src.model import build_tfidf_logistic_regression_model
+from nlp_with_disaster_tweets.evaluate import evaluate_cv, find_best_threshold
+from nlp_with_disaster_tweets.features import build_input_text
+from nlp_with_disaster_tweets.model import build_tfidf_logistic_regression_model
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = PROJECT_ROOT / "data"

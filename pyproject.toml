@@ -34,8 +34,8 @@ transformer = [
 ]
 
 [tool.setuptools.packages.find]
-where = ["."]
-include = ["src*"]
+where = ["src"]
+include = ["nlp_with_disaster_tweets"]
 
 [tool.black]
 line-length = 88
